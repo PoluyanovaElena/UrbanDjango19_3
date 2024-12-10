@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Игровая платформа{% endblock %}</title>
+</head>
+<body>
+    <header>
+        {% block pagename %}
+            <h1>Главная страница</h1>
+        {% endblock %}
+    </header>
+
+    <nav>
+        {% block menu %}
+        <ul>
+            <li><a href="{% url 'platform' %}">Главная</a></li>
+            <li><a href="{% url 'games' %}">Магазин</a></li>
+            <li><a href="{% url 'cart' %}">Корзина</a></li>
+            <li><a href="{% url 'sign_up_by_html' %}">Регистрация через HTML</a></li>
+            <li><a href="{% url 'sign_up_by_django' %}">Регистрация через Django</a></li>
+        </ul>
+        {% endblock %}
+    </nav>
+
+    <main>
+        {% block content %}
+            <p>content</p>
+        {% endblock %}
+    </main>
+</body>
+</html>
